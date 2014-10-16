@@ -9,11 +9,11 @@ source=('git://github.com/yagebu/asus-fancontrol.git')
 md5sums=('SKIP')
 
 build() {
-    cd asus-fancontrol
+    cd ${srcdir}/asus-fancontrol
     make
 }
 
 package() {
-    cd asus-fancontrol
+    cd ${srcdir}/asus-fancontrol
     make BINDIR="$pkgdir/usr/bin" install
 }
