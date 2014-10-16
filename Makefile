@@ -1,6 +1,5 @@
 MODEL=ux31a
-PREFIX=/usr/local
-BINDIR=$(PREFIX)/bin
+BINDIR=/usr/bin
 
 bin:
 	gcc $(MODEL).c -o fanctrl

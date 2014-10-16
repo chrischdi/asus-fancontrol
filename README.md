@@ -3,6 +3,9 @@ asus-fancontrol
 
 Asus UX31A and UX32VD fan speed regulation
 
+** This fork uses lm_sensors to get the temperature (in a very hackish way) 
+and provides a PKGBUILD for Arch Linux **
+
 IMPORTANT NOTE
 --------------
 
