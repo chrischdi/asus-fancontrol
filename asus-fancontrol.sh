@@ -25,7 +25,7 @@ set -u
 declare -i INTERVAL=5
 declare -i MINTEMP=50
 declare -i MAXTEMP=80
-declare    FANCTRL=/usr/local/bin/fanctrl
+declare    FANCTRL=/usr/bin/fanctrl
 declare    LOG_FILE=/var/log/asus-fancontrol.log
 
 ME=$(basename "$0")
@@ -138,8 +138,9 @@ exit_if_not_alone () {
 
 get_temperature () {
         local temp
-        temp=`cat /sys/class/thermal/thermal_zone0/temp`
-        temp=${temp:0:2}
+        #temp=`cat /sys/class/thermal/thermal_zone0/temp`
+        #temp=${temp:0:2}
+        temp=$(sensors | grep 'Physical' | /usr/bin/grep -o -E '[0-9][0-9]' | head -n1)
         echo $temp
         return 0
 }
