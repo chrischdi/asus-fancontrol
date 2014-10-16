@@ -16,4 +16,6 @@ build() {
 package() {
     cd ${srcdir}/asus-fancontrol
     make BINDIR="$pkgdir/usr/bin" install
+
+    install -Dm644 asus-fancontrol.service "${pkgdir}/usr/lib/systemd/system/asus-fancontrol.service"
 }

@@ -1,0 +1,9 @@
+[Unit]
+Description=ASUS UX31A fan control
+
+[Service]
+ExecStart=/bin/bash /usr/bin/asus-fancontrol
+Restart=always
+
+[Install]
+WantedBy=graphical.target
