@@ -8,8 +8,8 @@ clean:
 	rm -f fanctrl
 
 install:
-	install --mode 755 fanctrl            $(BINDIR)/fanctrl
-	install --mode 755 asus-fancontrol.sh $(BINDIR)/asus-fancontrol
+	install -Dm755 fanctrl            $(BINDIR)/fanctrl
+	install -Dm755 asus-fancontrol.sh $(BINDIR)/asus-fancontrol
 
 uninstall:
 	rm -f $(BINDIR)/fanctrl
