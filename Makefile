@@ -9,7 +9,7 @@ clean:
 
 install:
 	install -Dm755 fanctrl            $(BINDIR)/fanctrl
-	install -Dm755 asus-fancontrol.sh $(BINDIR)/asus-fancontrol
+	install -Dm755 asus-fancontrol.py $(BINDIR)/asus-fancontrol
 
 uninstall:
 	rm -f $(BINDIR)/fanctrl

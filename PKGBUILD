@@ -4,7 +4,7 @@ pkgver=0.1
 pkgrel=1
 pkgdesc="Fan control for ASUS UX31A"
 arch=('x86_64')
-depends=('lm_sensors')
+depends=('lm_sensors' 'python')
 source=('git://github.com/yagebu/asus-fancontrol.git')
 md5sums=('SKIP')
 
