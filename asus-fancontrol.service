@@ -2,7 +2,7 @@
 Description=ASUS UX31A fan control
 
 [Service]
-ExecStart=/bin/bash /usr/bin/asus-fancontrol
+ExecStart=/usr/bin/asus-fancontrol
 Restart=always
 
 [Install]
