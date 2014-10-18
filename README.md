@@ -1,70 +1,38 @@
 asus-fancontrol
 ===============
 
-Asus UX31A and UX32VD fan speed regulation
+Asus UX31A fan speed regulation
 
 **This fork uses lm-sensors to get the temperature (in a very hackish way) 
-and provides a PKGBUILD for Arch Linux **
+and provides a PKGBUILD for Arch Linux**
+
 
 IMPORTANT NOTE
 --------------
 
 **NO WARRANTIES WHATSOEVER. USE AT YOUR OWN RISK.**
 
-**Do not** run this on computers other than Asus UX31A and UX32VD 
+**Do not** run this on computers other than Asus UX31A 
 unless you know what you are doing.
+
+The wrapper might also work for the UX32VD fanctrl...
 
 Installation
 ------------
 
-Asus UX31A:
+Download the PKGBUILD and run `makepkg`
 
-
-    make MODEL=ux31a
-    make install
-
-
-Asus UX32VD:
-
-
-    make MODEL=ux32vd
-    make install
-
-
+To use it on a different distro, build it running  `make` and then `make install`.
+Copy `asus-fancontrol.service` to `/etc/systemd/system/`. If your distro doesn't use systemd,
+you have to use some other tool to make sure that asus-fancontrol is always running.
 
 Usage
 -----
 
-    asus-fancontrol
-    asus-fancontrol --help
-    asus-fancontrol --verbose
+    systemctl enable asus-fancontrol.service
+    systemctl start asus-fancontrol.service
 
-
-
-Example
--------
-
-Set up a `cron` job to run `asus-fancontrol` at boot-time. Run:
-
-    sudo crontab -e
-    
-And add this line to the system's `crontab`:
-
-    @reboot /usr/local/bin/asus-fancontrol
-
-Save, and quit.
-
-Create an executable script to restart `asus-fancontrol` upon resume from suspend.
-
-`/etc/pm/sleep.d/98asus-fancontrol`
-
-    #!/bin/bash
-    case "$1" in
-    hibernate|suspend) true;;
-    resume|thaw) echo path/to/asus-fancontrol | /usr/bin/at now;;
-    esac
-    
-Finally, you may either reboot, or suspend and resume, to get it going on the background.
+If the service crashes or you want to stop using it, make sure to run `fanctrl auto` to revert back to the normal fan control.
 
 
 Authors
@@ -74,6 +42,8 @@ Alexander Breckel wrote [`f3jp.c`][1] for Asus F3Jp in 2008.
 [Prikolchik][3] wrote [`ux32vd.c`][2] for Asus UX32VD based on Breckel's, and
 `ux31a.c` is merely a stripped-down version of Prikolchik's.
 Finally, `asus-fancontrol.sh` is an improved version of Breckel's [wrapper][1]. 
+
+The python wrapper script is written by me, all the rest is due to the above
 
 [1]: http://www.aneas.org/knowledge/asus_f3jp_fan_control.php  "Asus F3Jp fan control on Linux"
 [2]: http://pastebin.com/Hp2pWeyL "fancntrl.c: Asus UX32VD fan control proof of concept"
