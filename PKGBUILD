@@ -1,11 +1,11 @@
-# Maintainer: Jakob Schnitzer <mail[at]jakobschnitzer[dot]de>
+# Maintainer: Christian Schlotter <christi.schlotter[at]gmail[dot]com>
 pkgname=asus-fancontrol
 pkgver=0.1
 pkgrel=1
-pkgdesc="Fan control for ASUS UX31A"
+pkgdesc="Fan control for ASUS UX32V"
 arch=('x86_64')
 depends=('lm_sensors' 'python')
-source=('git://github.com/yagebu/asus-fancontrol.git')
+source=('git://github.com/chrischdi/asus-fancontrol.git')
 md5sums=('SKIP')
 
 build() {

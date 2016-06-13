@@ -1,4 +1,4 @@
-MODEL=ux31a
+MODEL=ux32v
 BINDIR=/usr/bin
 
 bin:

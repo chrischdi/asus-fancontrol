@@ -1,5 +1,5 @@
 [Unit]
-Description=ASUS UX31A fan control
+Description=ASUS UX32V fan control
 
 [Service]
 ExecStart=/usr/bin/asus-fancontrol
