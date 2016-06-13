@@ -43,7 +43,9 @@ Alexander Breckel wrote [`f3jp.c`][1] for Asus F3Jp in 2008.
 `ux31a.c` is merely a stripped-down version of Prikolchik's.
 Finally, `asus-fancontrol.sh` is an improved version of Breckel's [wrapper][1]. 
 
-The python wrapper script is written by me, all the rest is due to the above
+The python wrapper script is written by Jakob Schnitzer (https://github.com/yagebu), all the rest is due to the above
+
+I just added back the module for model ux32vd.
 
 [1]: http://www.aneas.org/knowledge/asus_f3jp_fan_control.php  "Asus F3Jp fan control on Linux"
 [2]: http://pastebin.com/Hp2pWeyL "fancntrl.c: Asus UX32VD fan control proof of concept"
